@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A3 Bridal</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="script.js"></script>
+</head>
+<body >
+    <header class="header" id="header">
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#" onclick="openBooking()"  >BOOKING</a></li>
+                <li><a href="#bangles">BANGLES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="home" id="home">
+    <div class="logo">
+        <img src="logo.png" alt="LOGO" style="border-radius: 50%; width: 15vw;">
+        <h2>A3 Bridal Zone</h2>
+    </div>
+    </section>
+    <section id="about" class="about">
+        <div class="container">
+            <h1>About Ashra - Professional Bridal Makeup Artist</h1>
+            <div class="profile">
+                <img src="logo.png" alt="Ashra - Professional Bridal Makeup Artist" class="profile-image">
+                <p class="bio">With my unwavering passion for enhancing natural beauty and my keen eye for detail, I have established myself as a renowned bridal makeup artist. Through years of dedicated experience in the industry, I have had the privilege of completing numerous projects, leaving brides feeling confident and radiant on their special day.</p>
+                <p class="experience">Drawing upon my extensive experience, I have had the privilege of working with diverse clients, crafting breathtaking looks that seamlessly transition between traditional and contemporary styles. My foremost dedication lies in bringing each bride's distinctive vision to life flawlessly. It is my commitment to excellence and personalized approach that has secured my reputable position within the bridal makeup industry.</p>
+            </div>
+            <button onclick="openBooking()" class="book">Book Appointment</button>
+        </div>
+        <div class="screenover" onclick="closeBooking()" id="screenover"></div>
+
+    </section>
+    <div class="floating-form" id="bookingForm">
+        <h2>BOOKING SERVICES</h2>
+        <form>
+                <input type="text" id="name" name="name" placeholder="Name"><br><br>
+                <input type="phonenumber" id="phoneno" name="phoneno" placeholder="Phoneno" required><br><br>
+                <input type="email" id="email" name="email" placeholder="email" required><br><br>
+                <input type="datetime-local" id="date" name="date" placeholder="date" required><br><br>
+                <label >Services</label><br>
+                <input type="checkbox" id="bridal" name="service" value="Bridal">
+                <label for="Bridal"> Bridal</label><br>
+                <input type="checkbox" id="mehandi" name="service" value="Mehandi">
+                <label for="Mehandi">Mehandi</label><br>
+
+                <input type="checkbox" id="hairStyling" name="service" value="Hair Styling">
+                <label for="Hair Styling"> Hair Styling</label><br>
+        
+
+                <button type="submit" onclick="submitBooking()">Submit</button>
+                <button type="button" onclick="closeBooking()">Cancel</button>
+            </form>
+        </div>
+    <section id="bangles">
+        <h1>CUSTOMIZED BANGLES</h1>
+        <div  class="bangles">
+        <div class="bangle-item">
+            <img class="bangle-image" src="bangles1.jpg" alt="Bangle 1">
+            <button class="buy-button" onclick="openForm('bangles1','Sky Blue Matching Silk Thread Bangles' )">Buy Now</button>
+        </div>
+        <div class="bangle-item">
+            <img class="bangle-image" src="bangles2.jpg" alt="Bangle 2">
+            <button class="buy-button" onclick="openForm('bangles2', 'Silk Thread Bangles Latest Design 2022')">Buy Now</button>
+        </div>
+        <div class="bangle-item">
+            <img class="bangle-image" src="bangles3.jpg" alt="Bangle 6">
+            <button class="buy-button" onclick="openForm('bangles3', 'Green and Yellow Color Silk Thread Bangle Chuda')">Buy Now</button>
+        </div>
+        <div class="bangle-item">
+            <img class="bangle-image" src="bangles4.jpg" alt="Bangle 6">
+            <button class="buy-button" onclick="openForm('bangles4', 'Stylish Women\'s Silk Thread Bangles')">Buy Now</button>
+        </div>
+        <div class="bangle-item">
+            <img class="bangle-image" src="bangles5.jpg" alt="Bangle 6">
+            <button class="buy-button" onclick="openForm('bangles5', 'Sky Blue Silk Thread Bangles With Pearl')">Buy Now</button>
+        </div>
+        <div class="bangle-item">
+            <img class="bangle-image" src="bangles6.jpg" alt="Bangle 6">
+            <button class="buy-button" onclick="openForm('bangles6', 'Sky Blue Silk Thread Chuda With Latkan for Matching Saree')">Buy Now</button>
+        </div>
+        
+    </div>
+    </section>
+
+    <div class="overlay" onclick="closeForm()" id="overlay"></div>
+    <div class="bangles-form" id="floatingForm" style="display: none;">
+        <div class="bangle-details">
+            <img id="selectedImage" src="" alt="Selected Bangle">
+        </div>
+        <div class="details">
+            <h2>Bangle Details</h2>
+            <br>
+            <p id="bangleDetails">Select Size:</p>
+            <input type="radio" id="size1" name="size" value="Small">
+            <label for="size1">Small</label><br>
+            <input type="radio" id="size2" name="size" value="Medium">
+            <label for="size2">Medium</label><br>
+            <input type="radio" id="size3" name="size" value="Large">
+            <label for="size3">Large</label><br>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1"><br><br>
+            <button onclick="buyNow()">Buy Now</button>
+            <button onclick="closeForm()">Cancel</button>
+        </div>
+        </div>
+        <section id="contact" class="contact">
+            <h1>CONTACT US</h1>
+            <div class="container">
+                <div class="contact-icons">
+                    <div class="icon">
+                        <img src="whatsapp.png" alt="Icon 1">
+                        <p>9443182544</p>
+                    </div>
+                    <div class="icon">
+                        <img src="insta.png" alt="Icon 2">
+                        <p>@bridal_mehandi_zone_a3</p>
+                    </div>
+                    <div class="icon">
+                        <img src="email1.png" alt="Icon 3">
+                        <p>ashrathalaisamy@gmail.com</p>
+                    </div>
+                    <div class="icon">
+                        <img src="location.png" alt="Icon 4">
+                        <p>KOVILPATTI</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Get in Touch with Us</h2>
+                    <form>
+                        <input type="text" placeholder="Name"><br>
+                        <input type="email" placeholder="Email"><br>
+                        <input type="text" placeholder="Subject"><br>
+                        <textarea placeholder="Message"></textarea><br>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+</body>
+</html>
